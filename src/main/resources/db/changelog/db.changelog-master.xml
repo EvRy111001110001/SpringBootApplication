@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="createNewsTable" author="Katerina">
+        <sql>
+            CREATE TABLE news (
+            id SERIAL PRIMARY KEY,
+            title VARCHAR(255),
+            text VARCHAR(255),
+            category_id INTEGER NOT NULL,
+            creation_time TIMESTAMP
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="createCategoryTable" author="Katerina">
+        <sql>
+            CREATE TABLE category (
+            id SERIAL PRIMARY KEY,
+            title VARCHAR(255)
+            );
+        </sql>
+    </changeSet>
+
+
+</databaseChangeLog>
